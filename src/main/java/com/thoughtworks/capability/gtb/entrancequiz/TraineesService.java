@@ -39,4 +39,9 @@ public class TraineesService {
     public void init(List<String> traineeNames) {
         IntStream.range(0, traineeNames.size()).forEach(id -> trainees.add(new Trainee(id + 1, traineeNames.get(id))));
     }
+
+    public List<Trainee> addOne(String name) {
+        trainees.add(new Trainee(trainees.size() + 1, name));
+        return trainees;
+    }
 }

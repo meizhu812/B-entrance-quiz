@@ -1,12 +1,11 @@
 package com.thoughtworks.capability.gtb.entrancequiz;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-
+@CrossOrigin
 public class TraineesResource {
     private final TraineesService service;
 
@@ -17,5 +16,10 @@ public class TraineesResource {
     @GetMapping("/trainees")
     public List<Trainee> findAll() {
         return service.findAll();
+    }
+
+    @PostMapping("/trainees")
+    public List<Trainee> addOne(@RequestBody String name) {
+        return service.addOne(name);
     }
 }
