@@ -19,7 +19,7 @@ public class TraineesResource {
     }
 
     @PostMapping("/trainees")
-    public List<Trainee> addOne(@RequestBody String name) {
-        return service.addOne(name);
+    public List<Trainee> addOneByName(@RequestBody String name) {
+        return service.addOneByName(name);
     }
 }
